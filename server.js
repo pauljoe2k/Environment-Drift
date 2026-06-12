@@ -6,7 +6,11 @@ const config = require('./config');
 const app = express();
 
 const port = config.port;
-const requiredEnvVars = ['PORT'];
+const requiredEnvVars = [
+  'PORT',
+  'DATABASE_URL',
+  'JWT_SECRET'
+];
 
 requiredEnvVars.forEach((key) => {
   if (!process.env[key]) {
